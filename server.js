@@ -5,6 +5,7 @@
   Datum: 2025-10-18
 */
 
+//imports
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
@@ -15,7 +16,8 @@ dotenv.config();
 
 const authed = require('./src/routes/authed');
 const menuRoutes = require('./src/routes/menu');
- 
+
+// import file system module för filhantering
 const path = require('path');
 const fs = require('fs');
  
@@ -29,6 +31,7 @@ if (!JWT_SECRET || !MONGO_URI) {
   console.error('Missing env vars');
   process.exit(1);
 }
+
 
 // App setup
 const app = express();

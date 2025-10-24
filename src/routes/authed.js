@@ -17,12 +17,12 @@ router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
-      return res.status(400).json({ message: 'Username and password are required' });
+      return res.status(400).json({ message: 'Användarnamn och lösenord måste fyllas i' });
     }
 
     // check against env admin
     if (username !== ADMIN_USER || password !== ADMIN_PASS) {
-      return res.status(401).json({ message: 'Incorrect username or password' });
+      return res.status(401).json({ message: 'Ogiltigt Användarnamn/lösenord' });
     }
 
     // sign token
