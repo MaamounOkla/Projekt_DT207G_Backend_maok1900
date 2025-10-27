@@ -20,7 +20,7 @@ Systemet hanterar:
 - 2025-10-27
 
 ## 🌐 Live Demo
-[➡️ Norra Café (Live)](https://norra-cafe.netlify.app)
+[➡️ Norra Café (Live)](https://norracafe.netlify.app)
 ---
 
 ## Innehåll
