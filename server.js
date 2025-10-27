@@ -36,14 +36,13 @@ if (!JWT_SECRET || !MONGO_URI) {
 // App setup
 const app = express();
 app.use(express.json());
-// app.use(cors({
-//   origin: ['http://localhost:1234', 'http://127.0.0.1:1234']
-// }));
+app.use(cors({
+  origin: allowed || true,  
+  credentials: false
+}));
+ 
 
-
-app.use(cors());
-
-// Ensure uploads folder exists (local dev)
+// Ensure uploads folder exists  
 fs.mkdirSync(path.join(__dirname, 'uploads'), { recursive: true });
 
 // Serve uploaded images statically
