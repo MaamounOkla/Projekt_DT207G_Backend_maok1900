@@ -36,11 +36,16 @@ if (!JWT_SECRET || !MONGO_URI) {
 // App setup
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: allowed || true,  
-  credentials: false
-}));
- 
+const corsOptions = {
+  origin: [
+    "https://norracafe.netlify.app",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500"
+  ],
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
 
 // Ensure uploads folder exists  
 fs.mkdirSync(path.join(__dirname, 'uploads'), { recursive: true });
